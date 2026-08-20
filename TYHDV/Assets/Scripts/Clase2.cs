@@ -18,6 +18,7 @@ public class Clase2 : MonoBehaviour
         Debug.Log(name);
         Debug.Log(age);
         Debug.Log(birthDate);
+        Debug.Log(name + " " + age + " " + birthDate);
 
     }
 
