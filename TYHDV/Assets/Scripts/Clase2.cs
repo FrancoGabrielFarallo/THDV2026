@@ -42,6 +42,10 @@ public class Clase2 : MonoBehaviour
 
         Debug.Log(age2);
 
+
+
+
+
     }
 
     // Update is called once per frame
