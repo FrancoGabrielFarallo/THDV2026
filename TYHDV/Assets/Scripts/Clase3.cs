@@ -36,6 +36,9 @@ public class Clase3 : MonoBehaviour
 
             counter++;
 
+            Debug.Log(counter);
+
+
             if (counter == 5)
                 verdad = true;
 
