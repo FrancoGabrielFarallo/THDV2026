@@ -16,6 +16,12 @@ public class EjerciciosClase4 : MonoBehaviour
 
     float segundosRestantes = 10;
 
+    int[]segundosPares = new int[5];
+
+    int posicionArray = 0;
+
+    bool pararWhile = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,8 +32,8 @@ public class EjerciciosClase4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //time();
-        LogicaCuentaRegresiva();
+        time();
+        //LogicaCuentaRegresiva();
     }
 
 
@@ -43,8 +49,20 @@ public class EjerciciosClase4 : MonoBehaviour
 
             segundos++;
 
+            if (segundos % 2 == 0)
+            {
 
-            Debug.Log("Segundo: " + segundos);
+
+
+                segundosPares.SetValue(segundos, posicionArray);
+
+                posicionArray++;
+
+                //Debug.Log("Segundo: " + segundos + " es par");
+
+            }
+            //else { Debug.Log("Segundo: " + segundos); }
+
 
             timer = 0;
 
@@ -56,7 +74,17 @@ public class EjerciciosClase4 : MonoBehaviour
 
             Debug.Log("Terminado");
 
+            //ArrayPares();
+            MostrarParesMayoresWhile();
+
         }
+
+
+
+
+
+
+
     }
 
 
@@ -65,17 +93,19 @@ public class EjerciciosClase4 : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer >= 1 && duracion >= 0)
+        if (timer >= 1 && duracion >= 0 && segundosRestantes >= 1)
         {
 
             duracion--;
 
-            Debug.Log("Tiempo Restante: " + segundosRestantes);
+
 
             segundosRestantes--;
 
 
-            
+            Debug.Log("Tiempo Restante: " + segundosRestantes);
+
+
 
             timer = 0;
 
@@ -85,6 +115,8 @@ public class EjerciciosClase4 : MonoBehaviour
         {
             terminar = true;
 
+            pararWhile = true;
+
             Debug.Log("Terminado");
 
         }
@@ -92,6 +124,49 @@ public class EjerciciosClase4 : MonoBehaviour
 
 
     }
+
+
+    void ArrayPares()
+    {
+
+        for (int i = 0; i < segundosPares.Length; i++)
+        {
+
+
+            Debug.Log("Par: " + segundosPares[i]);
+
+        }
+
+
+    }
+
+
+    void MostrarParesMayoresWhile()
+    {
+
+
+        while(pararWhile == false)
+        {
+
+            int i= 0; 
+            i++;
+
+            if (posicionArray >= 1)
+            {
+
+                Debug.Log("Par: " + segundosPares[i]);
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+
 
 
 
