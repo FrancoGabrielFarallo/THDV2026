@@ -70,6 +70,9 @@ public class EjerciciosClase4 : MonoBehaviour
 
         if (duracion == 0 && terminar == false)
         {
+
+            pararWhile = true;
+
             terminar = true;
 
             Debug.Log("Terminado");
@@ -115,7 +118,7 @@ public class EjerciciosClase4 : MonoBehaviour
         {
             terminar = true;
 
-            pararWhile = true;
+            
 
             Debug.Log("Terminado");
 
@@ -145,19 +148,22 @@ public class EjerciciosClase4 : MonoBehaviour
     {
 
 
-        while(pararWhile == false)
+        int i = 0;
+
+        while (i < posicionArray)
         {
 
-            int i= 0; 
-            i++;
+             
+            
 
-            if (posicionArray >= 1)
+            if (segundosPares[i] >= 5)
             {
 
                 Debug.Log("Par: " + segundosPares[i]);
 
             }
 
+            i++;
 
         }
 
